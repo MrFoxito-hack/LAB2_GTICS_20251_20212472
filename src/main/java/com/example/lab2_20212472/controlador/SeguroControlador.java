@@ -33,14 +33,14 @@ public class SeguroControlador {
         return "seguros"; // retorna la vista seguros.html
     }
 
-    //mostrar el formulario para crear un nuevo seguro
+    //mostramos el formulario para crear un nuevo seguro
     @GetMapping("/seguro/nuevo")
     public String mostrarFormularioNuevoSeguro(Model model) {
         model.addAttribute("seguro", new Seguro());
         return "seguroFormulario";
     }
 
-    //guardar el nuevo seguro
+    //guardamos el nuevo seguro
     @PostMapping("/seguro/guardar")
     public String guardarSeguro(@ModelAttribute("seguro") Seguro seguro) {
         seguroRepositorio.save(seguro);
