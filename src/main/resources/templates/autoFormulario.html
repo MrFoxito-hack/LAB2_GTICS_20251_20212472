@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Auto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+
+<h2>Registrar Auto</h2>
+
+<form th:action="@{/auto/guardar}" th:object="${auto}" method="post" class="row g-3">
+
+    <div class="col-md-6">
+        <label class="form-label">Modelo</label>
+        <input type="text" class="form-control" th:field="*{modelo}" required>
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label">Color</label>
+        <input type="text" class="form-control" th:field="*{color}" required>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Kilometraje</label>
+        <input type="number" class="form-control" th:field="*{kilometraje}" required>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Sede (ID)</label>
+        <input type="number" class="form-control" th:field="*{sedeIdSede}" required>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Costo por día</label>
+        <input type="number" step="0.01" class="form-control" th:field="*{costoPorDia}" required>
+    </div>
+
+    <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="/autos" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+</body>
+</html>
