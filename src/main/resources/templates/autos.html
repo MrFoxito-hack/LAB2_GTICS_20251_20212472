@@ -9,34 +9,36 @@
 
 <h2 class="mb-4">Lista de Autos</h2>
 
-<!-- Botón para agregar -->      <!-- ruta para crear un nuevo auto -->
+<!-- Botón para agregar --> <!-- ruta para crear un nuevo auto -->
 <a class="btn btn-primary mb-3" href="/auto/nuevo">Agregar Auto</a>
 
-<!-- Tabla de autos usando bootstrap -->
+<!-- Tabla de autos usando Bootstrap -->
 <table class="table table-bordered table-hover table-striped">
   <thead class="table-dark">
   <tr>
     <th>ID</th>
-    <th>Marca</th>
     <th>Modelo</th>
-    <th>Año</th>
+    <th>Color</th>
+    <th>Kilometraje</th>
+    <th>Sede</th>
+    <th>Costo por día</th>
     <th>Editar</th>
     <th>Eliminar</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="auto : ${listaAutos}">
-    <td th:text="${auto.id}"></td>
-    <td th:text="${auto.marca}"></td>
+    <td th:text="${auto.idauto}"></td>
     <td th:text="${auto.modelo}"></td>
-    <td th:text="${auto.anio}"></td>
-
-    <!-- Enlaces para editar y borrar transportistas -->
+    <td th:text="${auto.color}"></td>
+    <td th:text="${auto.kilometraje}"></td>
+    <td th:text="${auto.sedeIdSede}"></td>
+    <td th:text="${auto.costoPorDia}"></td>
     <td>
-      <a th:href="@{'/auto/editar/' + ${auto.id}}" class="btn btn-warning btn-sm">Editar</a>
+      <a th:href="@{'/auto/editar/' + ${auto.idauto}}" class="btn btn-warning btn-sm">Editar</a>
     </td>
     <td>
-      <a th:href="@{'/auto/eliminar/' + ${auto.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+      <a th:href="@{'/auto/eliminar/' + ${auto.idauto}}" class="btn btn-danger btn-sm">Eliminar</a>
     </td>
   </tr>
   </tbody>

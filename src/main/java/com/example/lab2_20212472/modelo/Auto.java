@@ -1,24 +1,33 @@
-// entity
-
 package com.example.lab2_20212472.modelo;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "auto")
-
-//hacemos uso de Project Lombok para hacer el codigo mas legible
+// Hacemos uso de Project Lombok para hacer el código más legible
+// Lombok genera automáticamente los métodos get y set por cada atributo
 @Getter
 @Setter
+@Entity
+@Table(name = "auto")
 public class Auto {
-    //agregamos notaciones para qeu Spring las reconozca
-    @Id //primary key de la tabla
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
-    private String marca;
+    @Id // Llave primaria de la tabla
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idauto")
+    private Integer idauto;
+
+    @Column(length = 45, nullable = false)
     private String modelo;
-    private Integer anio;
+
+    @Column(length = 45, nullable = false)
+    private String color;
+
+    private Integer kilometraje;
+
+    @Column(name = "sede_idsede")
+    private Integer sedeIdSede;
+
+    @Column(name = "costo_por_dia")
+    private Double costoPorDia;
 }

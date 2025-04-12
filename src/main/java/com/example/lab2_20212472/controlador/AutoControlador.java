@@ -1,7 +1,6 @@
 //Sabemos que para utilizar los repositorios de los controladores, estos
 //deben ser definidos como atributos finales de la clase e iniciarlos en el constructor
 package com.example.lab2_20212472.controlador;
-
 import com.example.lab2_20212472.modelo.Auto;
 import com.example.lab2_20212472.repositorio.AutoRepositorio;
 import org.springframework.stereotype.Controller;
